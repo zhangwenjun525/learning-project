@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.zhangwj.project</groupId>
+    <artifactId>learning-project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-javaformat.version>0.0.12</spring-javaformat.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <!--
+              Spring为您提供了一个方便的工具，以确保您的Java项目具有一致的“Spring”风格!
+              将spring-javaformat-maven-plugi加入Maven的build部分：
+              <plugin>
+                <groupId>io.spring.javaformat</groupId>
+                <artifactId>spring-javaformat-maven-plugin</artifactId>
+                <version>${spring-javaformat.version}</version>
+              </plugin>
+
+              然后，在~/.m2/settings.xml加入插件组：io.spring.javaformat
+              <pluginGroups>
+                  <pluginGroup>io.spring.javaformat</pluginGroup>
+              </pluginGroups>
+
+              运行./mvnw spring-javaformat:apply重新格式化你的Java代码了。
+            -->
+            <plugin>
+                <groupId>io.spring.javaformat</groupId>
+                <artifactId>spring-javaformat-maven-plugin</artifactId>
+                <version>${spring-javaformat.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
